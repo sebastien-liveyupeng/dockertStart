@@ -1,0 +1,309 @@
+/* Section Tendances - Style complètement nouveau */
+.tendances-section {
+  padding: 6rem 0;
+  
+  position: relative;
+  color: #fffffe;
+  overflow: hidden;
+}
+
+.tendances-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+}
+
+.tendances-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.tendances-section h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: #5F6C7B;
+  font-weight: 800;
+  text-align: left;
+  line-height: 1.1;
+}
+
+.tendances-description {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 3rem;
+  text-align: left;
+  color: #a7a9be;
+}
+
+.tendances-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.tendance-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  aspect-ratio: 3/4;
+  background: #1c1b22;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.tendance-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+  transition: opacity 0.5s ease;
+}
+
+.tendance-card:hover {
+  transform: scale(1.02);
+}
+
+.tendance-card:hover::after {
+  opacity: 0.7;
+}
+
+.tendance-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.8) contrast(1.1);
+  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.tendance-card:hover img {
+  transform: scale(1.1) rotate(1deg);
+}
+
+.card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  z-index: 2;
+  text-align: left;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.tendance-card:hover .card-label {
+  transform: translateY(-10px);
+}
+
+.card-label-category {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fafafa;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.card-label-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.collection-cta {
+  margin-top: 4rem;
+  text-align: left;
+}
+
+.btn-collection {
+  background-color: #1E3A8A;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border-radius: 50px;
+}
+
+.btn-collection:hover {
+  background-color: #68A1FF;
+}
+
+.btn-collection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: btn-shine 3s infinite;
+}
+
+@keyframes btn-shine {
+  0% { left: -100%; }
+  20% { left: 100%; }
+  100% { left: 100%; }
+}
+
+/* Ligne décorative */
+.tendances-decor-line {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  width: 2px;
+  height: 80%;
+  background: linear-gradient(to bottom, #2bb1ff, transparent);
+  z-index: 1;
+}
+
+/* Points décoratifs */
+.tendances-decor-dots {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  width: 150px;
+  height: 150px;
+  background-image: radial-gradient(#25e6ff 1px, transparent 2px);
+  background-size: 15px 15px;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+
+.tendance-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tendance-card {
+  opacity: 0;
+  animation: cardReveal 0.8s forwards cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+
+.tendance-card:nth-child(1) { animation-delay: 0.1s; }
+.tendance-card:nth-child(2) { animation-delay: 0.2s; }
+.tendance-card:nth-child(3) { animation-delay: 0.3s; }
+.tendance-card:nth-child(4) { animation-delay: 0.4s; }
+.tendance-card:nth-child(5) { animation-delay: 0.5s; }
+.tendance-card:nth-child(6) { animation-delay: 0.6s; }
+.tendance-card:nth-child(7) { animation-delay: 0.7s; }
+.tendance-card:nth-child(8) { animation-delay: 0.8s; }
+
+
+@media (max-width: 1024px) {
+  .tendances-section h2 {
+    font-size: 2.8rem;
+  }
+  
+  .tendances-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .card-label-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tendances-section {
+    padding: 4rem 0;
+  }
+  
+  .tendances-section h2 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  
+  .tendances-description {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .tendances-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .card-label {
+    padding: 1.5rem 1rem;
+  }
+  
+  .card-label-title {
+    font-size: 1rem;
+  }
+  
+  .collection-cta {
+    text-align: center;
+  }
+  
+  .tendances-decor-line {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .tendances-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .tendances-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .tendances-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .card-label {
+    padding: 1rem 0.75rem;
+  }
+  
+  .card-label-category {
+    font-size: 0.7rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .card-label-title {
+    font-size: 0.9rem;
+  }
+}

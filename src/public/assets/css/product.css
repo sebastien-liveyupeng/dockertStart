@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+:root {
+  --accent-color: #4f8a8b;
+  --bg-color: #f5f5f5;
+  --card-bg: #ffffff;
+  --text-primary: #2d3142;
+  --text-secondary: #4f5d75;
+  --text-light: #9ba4b4;
+  --border-radius: 8px;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease-in-out;
+  --border: 1px solid #eee;
+  --button-size: 2.25rem;
+  --button-border-radius: 50%;
+  --filter-padding: 1rem;
+  --filter-font-size: 0.95rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Conteneur des produits */
+.products-container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+/* Filtres */
+.filters-container {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  margin-bottom: 3rem;
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+
+.filters-container h2 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-primary);
+  font-weight: 500;
+  position: relative;
+}
+
+.filters-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--accent-color);
+}
+
+.filters-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-label {
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.filter-select {
+  appearance: none;
+  padding: var(--filter-padding);
+  border: var(--border);
+  font-size: var(--filter-font-size);
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  cursor: pointer;
+  width: 100%;
+  border-radius: var(--border-radius);
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.reset-filters {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.reset-filters:hover {
+  background-color: #3a6f70;
+}
+
+/* Cartes de produits */
+.product-card-vertical {
+  flex: 1 1 calc(33.33% - 2rem);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg);
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card-vertical:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.product-card-vertical.reverse {
+  direction: rtl;
+}
+
+/* Images des produits */
+.product-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-image:hover img {
+  transform: scale(1.1);
+}
+
+/* Informations sur les produits */
+.product-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.product-info::before {
+  content: attr(data-category);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.product-name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.product-details {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.product-details span {
+  position: relative;
+}
+
+.product-details span:not(:last-child):after {
+  content: '';
+  position: absolute;
+  right: -0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: var(--text-light);
+}
+
+/* Actions produit */
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.product-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Boutons ajout au panier et like */
+.cart-button,
+.like-button {
+  width: var(--button-size);
+  height: var(--button-size);
+  border: none;
+  border-radius: var(--button-border-radius);
+  background-color: var(--accent-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.cart-button:hover,
+.like-button:hover {
+  transform: translateY(-2px);
+}
+
+.cart-button:active,
+.like-button:active {
+  transform: translateY(0);
+}
+
+/* Icônes des boutons */
+.cart-button::before,
+.like-button::before {
+  content: "";
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cart-button::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.like-button::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'%3E%3C/path%3E%3C/svg%3E");
+}
