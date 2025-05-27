@@ -1,1 +1,51 @@
 #orchestre les containers
+version: '3.8'
+
+services:
+#1er service : php-apache
+  php-apache:
+    build: .
+    ports:
+      - "5013:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+#2eme service : mysql
+  mysql:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: omni
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpass
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./src/config/bdd/omni.sql:/docker-entrypoint-initdb.d/omni.sql
+    networks:
+      - app-network
+#3eme service : phpmyadmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: root
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+      
+#stocakge des données de mysql
+volumes:
+  mysql_data:
+
+#pour que les services se commmuniquent entre eux
+networks:
+  app-network:
+    driver: bridge
