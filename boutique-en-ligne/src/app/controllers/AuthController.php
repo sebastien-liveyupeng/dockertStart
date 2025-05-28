@@ -16,6 +16,12 @@ class AuthController
 
   public function login()
   {
+    
+    if (isset($_SESSION['user_id'])) {
+      header('Location: /boutique-en-ligne/home');
+      exit;
+    }
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $email = $_POST['email'];
       $password = $_POST['password'];
@@ -29,11 +35,7 @@ class AuthController
         $_SESSION['user_email'] = $user['email'];
         $_SESSION['is_admin'] = $user['is_admin'];
 
-        // echo '<pre>' . print_r($_SESSION, true) . '</pre>';
-        // exit;
-
-
-        // Redirection
+        // Redirection selon rôle
         if ($user['is_admin']) {
           header('Location: /boutique-en-ligne/admin/dashboard');
         } else {
@@ -58,7 +60,6 @@ class AuthController
       $password = $_POST['password'];
       $confirmPassword = $_POST['confirm_password'];
 
-      // Vérification simple
       if ($password !== $confirmPassword) {
         $error = "Passwords do not match.";
         require_once __DIR__ . '/../views/auth/register.php';
@@ -82,12 +83,10 @@ class AuthController
     }
   }
 
-
-
   public function logout()
   {
     session_destroy();
-    header('/boutique-en-ligne/login');
+    header('Location: /boutique-en-ligne/login');  
     exit;
   }
 }

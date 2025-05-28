@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>- OMNI</title>
-   <!-- TailwindCSS  -->
-  <script src="https://cdn.tailwindcss.com"></script>   
- 
-  
+    <title>- OMNI</title>   
+    <!-- TailwindCSS  -->
+    <script src="https://cdn.tailwindcss.com"></script>   
     <link rel="stylesheet" href="/boutique-en-ligne/public/assets/css/product.css">
-    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -22,11 +19,11 @@
   $bannerMedia = '';
 
   if ($category === 'man') {
-      $bannerMedia = './public/assets/img/home.mp4';/* banniere  vrai homme*/
+      $bannerMedia = '/boutique-en-ligne/public/assets/img/home.mp4';/* banniere  vrai homme*/
   } elseif ($category === 'woman') {
-      $bannerMedia = './public/assets/img/femme.mp4'; /* banniere femme*/
+      $bannerMedia = '/boutique-en-ligne/public/assets/img/femme.mp4'; /* banniere femme*/
   } else {
-      $bannerMedia = './public/assets/img/www.omni.com (1).mp4'; /* banniere   defaut*/
+      $bannerMedia = '/boutique-en-ligne/public/assets/img/www.omni.com (1).mp4'; /* banniere   defaut*/
   }
   ?>
 

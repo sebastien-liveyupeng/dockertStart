@@ -243,7 +243,7 @@ sexBtnMobile.addEventListener('click', () => {
     <div class="flex flex-col md:flex-row min-h-screen">
         <!-- Left side image -->
         <div class="md:w-2/7 bg-gray-800">
-            <img src="./public/assets/img/tendances-femmes.jpg" alt="Boutique lifestyle" class="h-[200] w-[200] object-cover" />
+            <img src="/boutique-en-ligne/public/assets/img/tendances-femmes.jpg" alt="Boutique lifestyle" class="h-[200] w-[200] object-cover" />
         </div>
 
         <!-- Right side form -->

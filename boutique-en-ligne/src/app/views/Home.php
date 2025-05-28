@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OMNI – The Future</title>
-  <!-- TailwindCSS  -->
+  <title>OMNI – The Future</title>  <!-- TailwindCSS  -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!----------CSS ----->
-    <link rel="stylesheet" href="/boutique-en-ligne/public/assets/css/accueil.css">
+    <link rel="stylesheet" href="public/assets/css/accueil.css">
 
   <link 
     rel="stylesheet" 
@@ -218,17 +217,14 @@ sexBtnMobile.addEventListener('click', () => {
     <h2>Tendances</h2>
     <p class="tendances-description">Découvrez nos dernières collections et les tendances du moment.</p>
     
-    <div class="tendances-grid">
-      <a href="/boutique-en-ligne/index.php?controller=product&action=index&gender=woman" class="tendance-card">
-        <img src="./public/assets/img/tendances-femmes.jpg" alt="Tendance Femme">
+    <div class="tendances-grid">      <a href="/boutique-en-ligne/index.php?controller=product&action=index&gender=woman" class="tendance-card">
+        <img src="/boutique-en-ligne/public/assets/img/tendances-femmes.jpg" alt="Tendance Femme">
         <div class="card-label">
           <span class="card-label-category">Catégorie</span>
           <h3 class="card-label-title">Femme</h3>
         </div>
-      </a>
-
-      <a href="/boutique-en-ligne/index.php?controller=product&action=index&gender=man" class="tendance-card">
-        <img src="./public/assets/img/tendances-homme.jpg" alt="Tendance Homme">
+      </a>      <a href="/boutique-en-ligne/index.php?controller=product&action=index&gender=man" class="tendance-card">
+        <img src="/boutique-en-ligne/public/assets/img/tendances-homme.jpg" alt="Tendance Homme">
         <div class="card-label">
           <span class="card-label-category">Catégorie</span>
           <h3 class="card-label-title">Homme</h3>

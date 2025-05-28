@@ -1,23 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OMNI</title>
-<script src="https://js.stripe.com/v3/"></script>
-
-
-  <!-- TailwindCSS  -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
+    <script src="https://js.stripe.com/v3/"></script>
+    <!-- TailwindCSS  -->
+    <script src="https://cdn.tailwindcss.com"></script>    
     <!-----------CSS------------------>
     <link rel="stylesheet" href="/boutique-en-ligne/public/assets/css/cart.css">
-
-<!-----------Style Police------------------->
-
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-<!-----------Style Police------------------->
+    <!-----------Style Police------------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-----------Style Police------------------->
 
 </head>
 
@@ -25,7 +19,7 @@
 
 
 <video class="absolute top-0 left-0 w-full h-full object-cover" autoplay loop muted>
-  <source src="./public/assets/img/accueil.mp4" type="video/mp4">
+  <source src="/boutique-en-ligne/public/assets/img/accueil.mp4" type="video/mp4">
 
 </video>
 

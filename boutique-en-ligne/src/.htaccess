@@ -1,9 +1,10 @@
+
 RewriteEngine On
 RewriteBase /boutique-en-ligne/
 
-
+# Si le fichier ou dossier demandé n'existe pas
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-
+# Redirige vers index.php tout ce qui ne correspond pas à un fichier/dossier
 RewriteRule ^(.*)$ index.php [L]

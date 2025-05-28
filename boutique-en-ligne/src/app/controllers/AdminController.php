@@ -3,9 +3,9 @@
 namespace App\Controllers;
 
 require_once 'app/helpers/auth.php';
-require_once 'app/core/Database.php';
+require_once 'app/models/Database.php';
 
-use App\Core\Database;
+use App\Models\Database;
 use PDO;
 
 class AdminController

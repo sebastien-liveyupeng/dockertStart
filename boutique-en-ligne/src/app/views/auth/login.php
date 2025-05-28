@@ -1,13 +1,14 @@
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>OMNI – The Future</title>
-  <!-- TailwindCSS  -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- TailwindCSS  -->  <script src="https://cdn.tailwindcss.com"></script>
   <!----------CSS ----->
-    <link rel="stylesheet" href="/boutique-en-ligne/public/assets/css/accueil.css">
+    <link rel="stylesheet" href="../../public/assets/css/accueil.css">
 
   <link 
     rel="stylesheet" 
@@ -23,7 +24,7 @@
 <header class="relative h-[75vh] overflow-hidden">
 
 <video class="absolute top-0 left-0 w-full h-full object-cover" autoplay loop muted>
-  <source src="./public/assets/img/accueil.mp4" type="video/mp4">
+  <source src="/boutique-en-ligne/public/assets/img/accueil.mp4" type="video/mp4">
 
 </video>
 
@@ -201,7 +202,7 @@ sexBtnMobile.addEventListener('click', () => {
 <div class="flex flex-col md:flex-row min-h-screen">
   <!-- IMAGE -->
   <div class="md:w-2/7 bg-gray-800 hidden md:block">
-    <img src="./public/assets/img/tendances-homme.jpg" alt="Connexion Image" class="h-[200] w-[200] object-cover" />
+    <img src="/boutique-en-ligne/public/assets/img/tendances-homme.jpg" alt="Connexion Image" class="h-[200] w-[200] object-cover" />
   </div>
 
   <!-- FORMULAIRE -->

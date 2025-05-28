@@ -6,11 +6,10 @@ use PDO;
 class Database
 {
     public static function connect(): PDO
-    {
-        $host     = '127.0.0.1';
+    {        $host     = 'mysql';
         $dbname   = 'omni';           
         $username = 'root';
-        $password = '';
+        $password = 'root';
 
         $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
         $pdo = new PDO($dsn, $username, $password, [

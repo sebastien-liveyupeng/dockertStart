@@ -151,8 +151,8 @@ sexBtnMobile.addEventListener('click', () => {
 <div class="container">
     <div class="product-container">
       
-        <div class="product-image">
-            <img src="<?= htmlspecialchars($product['image_url']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
+      <div class="product-image">
+            <img src="/boutique-en-ligne<?= htmlspecialchars($product['image_url']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
         </div>
 
         <div class="product-info">

@@ -4,9 +4,8 @@ class Autoloader
 {
     public static function register(): void
     {
-        spl_autoload_register(function ($class) {
-            $prefix = 'App\\';
-            $baseDir = __DIR__ . '/../';
+        spl_autoload_register(function ($class) {            $prefix = 'App\\';
+            $baseDir = __DIR__ . '/../../app/';
 
             if (strpos($class, $prefix) === 0) {
                 $relativeClass = substr($class, strlen($prefix));
