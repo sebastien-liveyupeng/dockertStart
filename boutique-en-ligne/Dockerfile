@@ -9,7 +9,7 @@ RUN a2enmod rewrite
 
 
 # WORKDIR /var/www/html/boutique-en-ligne
-#je change le dossier de travail pour le dossier html de apache
+
 
 #copier maintenant tout les fichiers nécedsaires dans le container
 COPY ./src .
